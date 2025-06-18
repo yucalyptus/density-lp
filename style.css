@@ -201,7 +201,7 @@ p {
 
 /* Hero Section - Modern Mobile-First Design */
 .hero {
-    padding: 160px 0 80px;
+    padding: 120px 0 60px;
     background: linear-gradient(135deg, #fef7f0 0%, rgba(204, 125, 177, 0.08) 50%, rgba(255, 255, 255, 0.95) 100%);
     min-height: 100vh;
     display: flex;
@@ -235,17 +235,18 @@ p {
     margin: 0 auto;
     padding: 0 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    grid-template-columns: 1fr;
+    gap: 40px;
     align-items: center;
+    text-align: center;
 }
 
 .hero-title {
-    font-size: 36px;
+    font-size: clamp(24px, 6vw, 36px);
     font-weight: 300;
     color: var(--text-dark);
-    margin-bottom: 40px;
-    line-height: 1.5;
+    margin-bottom: 30px;
+    line-height: 1.4;
 }
 
 .hero-title .accent {
@@ -619,10 +620,10 @@ p {
     
     /* Key points mobile */
     .key-point {
-        padding: 15px 15px 15px 50px;
-        margin: 15px 0;
+        padding: 20px 15px 20px 50px;
+        margin: 20px 0;
         position: relative;
-        font-size: 16px;
+        font-size: 18px;
     }
     
     .key-point::before {
@@ -641,6 +642,15 @@ p {
 }
 
 /* Desktop table styling */
+/* Desktop hero layout */
+@media (min-width: 769px) {
+    .hero-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        text-align: left;
+    }
+}
+
 @media (min-width: 769px) {
     .layer-table-container {
         margin: 40px 0;
@@ -915,15 +925,16 @@ p {
 
 .common-solutions {
     background: white;
-    padding: 40px;
+    padding: 50px 40px;
     border-radius: 15px;
-    margin-bottom: 40px;
+    margin: 50px 0;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 .common-solutions h3 {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     color: var(--text-dark);
+    text-align: center;
 }
 
 .solutions-list {
@@ -1037,23 +1048,23 @@ p {
 
 .key-points {
     background: linear-gradient(135deg, rgba(204, 125, 177, 0.15), rgba(204, 125, 177, 0.08));
-    padding: 50px 40px;
+    padding: 60px 40px;
     border-radius: 20px;
     box-shadow: 0 8px 25px rgba(204, 125, 177, 0.15);
     border: 1px solid rgba(204, 125, 177, 0.2);
-    margin-top: 40px;
+    margin: 50px 0;
 }
 
 .key-point {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 25px;
-    font-size: 18px;
+    margin-bottom: 35px;
+    font-size: 20px;
     line-height: 1.6;
     color: var(--text-dark);
     font-weight: 500;
     position: relative;
-    padding-left: 60px;
+    padding: 15px 0 15px 60px;
 }
 
 .key-point::before {
@@ -2435,16 +2446,18 @@ p {
 .simple-points-layout {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 35px;
     max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin: 40px auto;
+    padding: 20px;
 }
 
 .simple-point {
     display: flex;
     align-items: flex-start;
-    gap: 20px;
+    gap: 25px;
+    padding: 15px 0;
+    margin: 0;
 }
 
 .simple-point .point-number {
@@ -2467,15 +2480,15 @@ p {
 
 .simple-point .point-content h4 {
     color: var(--text-dark);
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 500;
     margin-bottom: 8px;
     line-height: 1.4;
 }
 
 .simple-point .point-content p {
-    color: var(--text-light);
-    font-size: 15px;
+    color: var(--text-dark);
+    font-size: 20px;
     line-height: 1.6;
     margin: 0;
 }
@@ -2489,29 +2502,31 @@ p {
 .effectiveness-points-layout {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 35px;
     max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin: 40px auto;
+    padding: 20px;
 }
 
 .effectiveness-point {
     display: flex;
     align-items: flex-start;
-    gap: 25px;
+    gap: 20px;
+    padding: 15px 0;
+    margin: 0;
 }
 
 .effect-icon {
     background: var(--accent-color);
     color: white;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     flex-shrink: 0;
 }
 
@@ -2521,16 +2536,17 @@ p {
 
 .effectiveness-point .point-content h4 {
     color: var(--text-dark);
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    line-height: 1.4;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    line-height: 1.6;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 .effectiveness-point .effectiveness-result {
     color: var(--accent-color);
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 400;
     line-height: 1.6;
     margin: 0;
 }
@@ -2538,11 +2554,14 @@ p {
 /* Mobile responsive for simple points */
 @media (max-width: 768px) {
     .simple-points-layout {
-        gap: 20px;
+        gap: 30px;
+        margin: 30px auto;
+        padding: 20px 15px;
     }
     
     .simple-point {
-        gap: 15px;
+        gap: 20px;
+        padding: 12px 0;
     }
     
     .simple-point .point-number {
@@ -2552,34 +2571,38 @@ p {
     }
     
     .simple-point .point-content h4 {
-        font-size: 16px;
+        font-size: 18px;
     }
     
     .simple-point .point-content p {
-        font-size: 14px;
+        font-size: 18px;
     }
     
     .effectiveness-points-layout {
-        gap: 25px;
-        padding: 0 15px;
+        gap: 30px;
+        margin: 30px auto;
+        padding: 20px 15px;
     }
     
     .effectiveness-point {
-        gap: 20px;
+        gap: 15px;
+        padding: 12px 0;
     }
     
     .effect-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
     }
     
     .effectiveness-point .point-content h4 {
-        font-size: 18px;
+        font-size: 15px;
+        font-weight: 400;
     }
     
     .effectiveness-point .effectiveness-result {
-        font-size: 15px;
+        font-size: 13px;
+        font-weight: 400;
     }
 }
 
@@ -2728,8 +2751,9 @@ p {
     /* Points Layout */
     .simple-points-layout,
     .effectiveness-points-layout {
-        gap: 25px;
-        padding: 0 15px;
+        gap: 30px;
+        margin: 30px auto;
+        padding: 20px 15px;
     }
     
     .mechanism-points {
@@ -2795,31 +2819,32 @@ p {
 @media (max-width: 480px) {
     /* Ultra-Mobile Optimization */
     .container {
-        padding: 0 16px;
+        padding: 0 12px;
     }
     
     .section {
-        padding: 50px 0;
+        padding: 40px 0;
     }
     
     .section-title {
-        font-size: 24px;
-        margin-bottom: 40px;
-        line-height: 1.4;
+        font-size: clamp(20px, 5.5vw, 24px);
+        margin-bottom: 30px;
+        line-height: 1.3;
         padding: 0 5px;
+        text-align: center;
     }
     
     /* Hero for Small Screens */
     .hero {
-        padding: 100px 0 50px;
-        min-height: 100vh;
+        padding: 90px 0 40px;
+        min-height: 90vh;
     }
     
     .hero-title {
-        font-size: 24px;
-        line-height: 1.4;
-        margin-bottom: 25px;
-        padding: 0 10px;
+        font-size: clamp(20px, 6vw, 26px);
+        line-height: 1.3;
+        margin-bottom: 20px;
+        padding: 0 5px;
     }
     
     /* Header Ultra-Mobile */
@@ -2839,10 +2864,12 @@ p {
     
     /* Button Ultra-Mobile */
     .cta-button {
-        padding: 14px 28px;
-        font-size: 15px;
+        padding: 16px 24px;
+        font-size: 14px;
         width: 100%;
-        max-width: 300px;
+        max-width: 280px;
+        margin: 0 auto;
+        display: block;
     }
     
     /* Points and Icons */
@@ -2914,8 +2941,12 @@ p {
     .mission-content,
     .common-solutions,
     .insight {
-        padding: var(--space-lg) var(--space-md);
-        margin: var(--space-md) 0;
+        padding: 30px 20px;
+        margin: 30px 0;
+    }
+    
+    .common-solutions h3 {
+        margin-bottom: 30px;
     }
     
     .highlight {
@@ -2923,9 +2954,9 @@ p {
     }
     
     .key-point {
-        font-size: 16px;
-        padding: var(--space-md);
-        margin-bottom: var(--space-md);
+        font-size: 18px;
+        padding: 15px 0 15px 45px;
+        margin-bottom: 20px;
     }
     
     /* Case Studies */
@@ -2942,6 +2973,149 @@ p {
     /* CTA Section */
     .cta-title {
         font-size: clamp(20px, 5vw, 26px);
+    }
+}
+
+/* Extra small screens optimization (320px and below) */
+@media (max-width: 320px) {
+    .container {
+        padding: 0 8px;
+    }
+    
+    .section {
+        padding: 30px 0;
+    }
+    
+    .section-title {
+        font-size: clamp(18px, 6vw, 22px);
+        margin-bottom: 20px;
+    }
+    
+    .hero {
+        padding: 80px 0 30px;
+        min-height: 85vh;
+    }
+    
+    .hero-title {
+        font-size: clamp(18px, 7vw, 24px);
+        margin-bottom: 15px;
+    }
+    
+    .cta-button {
+        padding: 14px 20px;
+        font-size: 13px;
+        max-width: 260px;
+    }
+    
+    .header .container {
+        padding: 10px 8px;
+    }
+    
+    .logo-image {
+        height: 28px;
+    }
+    
+    .nav-link {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+    
+    /* Text content adjustments */
+    p {
+        font-size: clamp(13px, 3vw, 15px);
+        line-height: 1.6;
+    }
+    
+    .point-content h4 {
+        font-size: 14px;
+    }
+    
+    .point-content p {
+        font-size: 12px;
+    }
+    
+    .point-number,
+    .effect-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+    
+    /* Table optimization for very small screens */
+    .layer-table,
+    .pricing-table {
+        font-size: 11px;
+    }
+    
+    .layer-table th,
+    .layer-table td,
+    .pricing-table th,
+    .pricing-table td {
+        padding: 8px 4px;
+    }
+    
+    /* Additional spacing adjustments for extra small screens */
+    .simple-points-layout {
+        gap: 20px;
+        margin: 20px auto;
+        padding: 15px 8px;
+    }
+    
+    .simple-point {
+        padding: 10px 0;
+        gap: 18px;
+    }
+    
+    .simple-point .point-content h4 {
+        font-size: 17px;
+    }
+    
+    .simple-point .point-content p {
+        font-size: 17px;
+    }
+    
+    .key-point {
+        padding: 15px 8px 15px 40px;
+        margin-bottom: 15px;
+        font-size: 17px;
+    }
+    
+    .common-solutions {
+        padding: 25px 15px;
+        margin: 25px 0;
+    }
+    
+    .common-solutions h3 {
+        margin-bottom: 25px;
+        font-size: 16px;
+    }
+    
+    /* Effectiveness points for extra small screens */
+    .effectiveness-points-layout {
+        gap: 25px;
+        margin: 20px auto;
+        padding: 15px 8px;
+    }
+    
+    .effectiveness-point {
+        padding: 10px 0;
+        gap: 12px;
+    }
+    
+    .effect-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+    
+    .effectiveness-point .point-content h4 {
+        font-size: 14px;
+        font-weight: 400;
+    }
+    
+    .effectiveness-point .effectiveness-result {
+        font-size: 12px;
+        font-weight: 400;
     }
 }
 
