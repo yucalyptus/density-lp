@@ -1,0 +1,10 @@
+{
+  "name": "density-lp",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node tests/checkImages.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12"
+  }
+}
