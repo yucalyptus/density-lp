@@ -251,37 +251,6 @@ window.addEventListener('load', function() {
     window.addEventListener('scroll', updateScrollProgress);
     updateScrollProgress();
 
-    // Mechanism expand/collapse functionality
-    const mechanismToggle = document.getElementById('mechanismToggle');
-    const detailedMechanism = document.getElementById('detailedMechanism');
-    const expandText = mechanismToggle.querySelector('.expand-text');
-    const expandIcon = mechanismToggle.querySelector('.expand-icon');
-
-    if (mechanismToggle && detailedMechanism) {
-        mechanismToggle.addEventListener('click', function() {
-            const isExpanded = detailedMechanism.style.display !== 'none';
-            
-            if (isExpanded) {
-                // Collapse
-                detailedMechanism.style.display = 'none';
-                expandText.textContent = '詳しいメカニズムを見る';
-                mechanismToggle.classList.remove('expanded');
-            } else {
-                // Expand
-                detailedMechanism.style.display = 'block';
-                expandText.textContent = 'メカニズムを閉じる';
-                mechanismToggle.classList.add('expanded');
-                
-                // Smooth scroll to show the expanded content
-                setTimeout(() => {
-                    detailedMechanism.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }, 100);
-            }
-        });
-    }
 
     // Slick Slider initialization - simplified and robust
     function initSlider() {
