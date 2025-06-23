@@ -1,73 +1,9 @@
-// DOM Content Loaded
+// 初期化処理
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded');
+    console.log('DOM loaded - initializing scripts');
     
-    // テスト: jQueryが利用可能か確認
-    if (typeof $ === 'undefined') {
-        console.error('jQuery not loaded!');
-        return;
-    }
-    console.log('jQuery loaded');
-    
-    // テスト: Slickが利用可能か確認
-    if (typeof $.fn.slick === 'undefined') {
-        console.error('Slick not loaded!');
-        return;
-    }
-    console.log('Slick loaded');
-    
-    // テスト: 要素が存在するか確認
-    const slider = $('.cases-slider');
-    console.log('Slider elements found:', slider.length);
-    console.log('Slider element:', slider[0]);
-    
-    if (slider.length === 0) {
-        console.error('cases-slider element not found!');
-        return;
-    }
-    
-    // 最小限のSlick初期化
-    try {
-        slider.slick({
-            autoplay: true,
-            autoplaySpeed: 3000,
-            dots: true,
-            arrows: false,
-            infinite: true
-        });
-        console.log('Slick initialized successfully! Autoplay speed: 3 seconds');
-        
-        // スライド変更のタイミングをコンソールで確認
-        slider.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-            console.log('スライド変更: ' + currentSlide + ' → ' + nextSlide + ' (3秒間隔)');
-        });
-    } catch (error) {
-        console.error('Slick initialization failed:', error);
-    }
-});
-
-// 追加の初期化試行（window onload）
-window.addEventListener('load', function() {
-    console.log('Window loaded - trying slider again');
-    
-    if (typeof $ !== 'undefined' && $.fn.slick) {
-        const slider = $('.cases-slider');
-        if (slider.length > 0 && !slider.hasClass('slick-initialized')) {
-            console.log('Initializing slider on window load');
-            slider.slick({
-                autoplay: true,
-                autoplaySpeed: 3000,
-                dots: true,
-                arrows: false,
-                infinite: true
-            });
-            
-            // スライド変更のタイミングをコンソールで確認
-            slider.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-                console.log('スライド変更 (window load): ' + currentSlide + ' → ' + nextSlide + ' (3秒間隔)');
-            });
-        }
-    }
+    // Slider initialization
+    waitForLibraries();
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('a[href^="#"]');
     navLinks.forEach(link => {
