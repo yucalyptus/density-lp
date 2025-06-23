@@ -74,6 +74,9 @@ window.addEventListener('load', function() {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
+            if (targetId === '#' || !targetId) {
+                return;
+            }
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
